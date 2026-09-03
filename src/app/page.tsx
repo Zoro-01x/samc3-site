@@ -1,4 +1,5 @@
 import { Hero } from "@/components/hero";
+import { ClientHero } from "@/components/client-hero";
 import { SystemMap } from "@/components/system-map";
 import { CommitFeed } from "@/components/commit-feed";
 import Link from "next/link";
@@ -7,6 +8,8 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+
+      <ClientHero />
 
       {/* System map section */}
       <section className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6">

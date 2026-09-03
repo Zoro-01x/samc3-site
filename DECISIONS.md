@@ -49,4 +49,29 @@ Seed data for the MVP; real GitHub commit stream in Week 2.
 - **B — AI Handover Kit:** repo → DECISIONS.md + FLOW.md + BUG.md. The viral meta one.
 - **C — Founder's OS:** idea → ARCHITECTURE.md + CONSTRAINTS.md + task breakdown.
 
+## 2026-09-03 — Two-Layer Homepage (non-tech + tech)
+
+**Decision: Split the homepage into two clearly separated layers. Top is for clients; below is for builders.**
+
+**Why:** A non-tech founder visiting the site needs the value proposition in 5 seconds, not a paper-trail pitch. The technical layer (system map, build log, ARCHITECTURE.md) wins developers but loses clients before they read a word. We need both audiences — non-tech clients buy the work, tech people validate the work. Same site, two entry points.
+
+**The two layers:**
+
+**Layer 1 — For non-tech clients (top of homepage, above the fold):**
+- A plain-English hero under the existing line: "I turn messy manual work into software that runs itself. 3 things I've shipped this week — you can use them right now."
+- Three client-readable cards with **Before → After** framing:
+  - **Surat Textile OS** — "Upload your catalog → get a website + WhatsApp bot in 2 mins"
+  - **AI Handover Kit** — "Drop in a GitHub repo → get a paper trail of how it was built in seconds"
+  - **Founder's OS** — "Type your idea → get the architecture, constraints, and a task list"
+- Big green `Try it Live` button on each card.
+
+**Layer 2 — For builders (below, clearly labeled):**
+- The existing system map, build log, and ARCHITECTURE.md stay — labeled:
+  > "§ For builders — Want to see how I built this? Open paper trail ↓"
+- Non-tech visitor stops at Layer 1. Tech visitor scrolls deeper.
+
+**Card C (Founder's OS) treatment:** Showpiece only. Stays as "Coming soon" card with no live action and no signup. It's a private project for an organization; no public data, no email capture, no waitlist. The card exists to prove Sam is working on real things for real orgs, not to capture leads.
+
+## 2026-09-03 — Hero copy (client-readable)
+
 **Why:** They are the proof. "You can use it" beats "you should believe me."
