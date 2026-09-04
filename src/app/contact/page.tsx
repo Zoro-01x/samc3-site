@@ -35,7 +35,7 @@ export default function ContactPage() {
 
       <div className="mt-10 grid gap-4 sm:grid-cols-2">
         <a
-          href="https://instagram.com/x0__sam__0x"
+          href="https://ig.me/m/x0__sam__0x?text=Hi%20Sam%2C%20I%20found%20your%20site%20and%20I%27d%20like%20to%20talk%20about%20building%20something%20for%20my%20business."
           target="_blank"
           rel="noopener noreferrer"
           className="group flex flex-col rounded-xl border border-border bg-surface p-6 transition-all hover:border-accent/50 hover:shadow-[0_0_30px_rgba(16,185,129,0.08)]"
@@ -46,7 +46,8 @@ export default function ContactPage() {
             @x0__sam__0x →
           </span>
           <p className="mt-3 text-sm text-muted-2">
-            Fastest way to reach me. I usually reply within a few hours.
+            Opens a message straight to me — edit it and hit send. I usually
+            reply within a few hours.
           </p>
         </a>
 
