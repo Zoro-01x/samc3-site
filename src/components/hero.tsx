@@ -32,10 +32,10 @@ export function Hero() {
 
       <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row">
         <Link
-          href="/systems"
+          href="/contact"
           className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-bg transition-colors hover:bg-accent-dim"
         >
-          See live systems
+          Let&apos;s build something
           <span aria-hidden>→</span>
         </Link>
         <Link

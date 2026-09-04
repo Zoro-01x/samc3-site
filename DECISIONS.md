@@ -72,6 +72,34 @@ Seed data for the MVP; real GitHub commit stream in Week 2.
 
 **Card C (Founder's OS) treatment:** Showpiece only. Stays as "Coming soon" card with no live action and no signup. It's a private project for an organization; no public data, no email capture, no waitlist. The card exists to prove Sam is working on real things for real orgs, not to capture leads.
 
+## 2026-09-03 — Homepage rebuild for non-tech clients
+
+**Decision: Rebuild the homepage to lead with services, not proof. Drop the system map from the homepage, simplify nav to Home + Contact, add a /contact page, point all CTAs to /contact.**
+
+**Why:** The site is the showcase for Sam, an AI Systems Architect, but his actual clients are non-tech business owners (Surat SME owners, founders with a manual Excel/WhatsApp workflow). The current homepage leads with a system-map tree and a build log — which win developers but lose business owners in the first 5 seconds. Real-estate on the homepage is precious, so above-the-fold must answer: "What can you build for me and how do I talk to you?"
+
+**The new homepage order:**
+1. AFP tag + hero line (kept)
+2. **3 service cards** (NEW) — "What I Can Build For You":
+   - AI Websites That Do The Work (answer leads, book calls, sell while sleeping)
+   - Business Software That Replaces Manual Work (Excel/WhatsApp/sheets → 1-click software)
+   - AI That Uses Your Own Data (chats, notes, data → content, reports, auto-replies)
+   - All buttons → `/contact`
+3. Build log section, **renamed** "How I Work — The Paper Trail", with new subtext explaining it's a live day-by-day commit feed, not screenshots. No links to non-existent pages from the feed.
+4. Footer (kept)
+
+**The system map** is removed from the homepage. The component file stays in the repo for now (it doesn't 404 just by existing), but is not rendered. Builders/devs who care can still see `ARCHITECTURE.md` directly on GitHub.
+
+**Nav is simplified to just Home + Contact.** `/systems`, `/blueprints`, `/lab` still exist as routes for those who find them via direct link, but they're not in the nav — non-tech clients don't need them cluttering the chrome.
+
+**/contact page:** Created. Single page with Instagram (`@x0__sam__0x`) + email. Simple, mobile-friendly, no forms (forms are friction; one DM is faster).
+
+**Real route audit before push (zero 404s required):**
+- `/` ✓
+- `/contact` ✓ (new)
+- `/systems`, `/blueprints`, `/lab`, `/architecture` ✓ (kept, not in nav)
+- All `<Link>` hrefs on homepage now resolve
+
 ## 2026-09-03 — Hero copy (client-readable)
 
 **Why:** They are the proof. "You can use it" beats "you should believe me."

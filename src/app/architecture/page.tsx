@@ -30,7 +30,7 @@ export default function ArchitecturePage() {
           </p>
         </div>
         <a
-          href="https://github.com/Zoro-01x/samc3-site/blob/main/ARCHITECTURE.md"
+          href="https://github.com/Zoro-01x/samc3-site/blob/master/ARCHITECTURE.md"
           target="_blank"
           rel="noopener noreferrer"
           className="rounded-lg border border-border bg-surface px-3 py-1.5 font-mono text-xs text-muted transition-colors hover:border-accent/50 hover:text-accent"

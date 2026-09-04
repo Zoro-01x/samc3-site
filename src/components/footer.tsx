@@ -24,10 +24,10 @@ export function Footer() {
             ARCHITECTURE.md
           </Link>
           <Link
-            href="/blueprints"
+            href="/contact"
             className="transition-colors hover:text-foreground"
           >
-            method
+            contact
           </Link>
         </div>
       </div>

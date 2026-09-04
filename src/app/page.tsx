@@ -1,6 +1,5 @@
 import { Hero } from "@/components/hero";
-import { ClientHero } from "@/components/client-hero";
-import { SystemMap } from "@/components/system-map";
+import { ServiceCards } from "@/components/service-cards";
 import { CommitFeed } from "@/components/commit-feed";
 import Link from "next/link";
 
@@ -9,37 +8,20 @@ export default function HomePage() {
     <>
       <Hero />
 
-      <ClientHero />
+      <ServiceCards />
 
-      {/* System map section */}
+      {/* How I Work — paper trail */}
       <section className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6">
         <div className="mb-8 flex flex-col gap-2">
           <span className="font-mono text-xs uppercase tracking-wider text-accent">
-            § 01 — The map
+            § 01 — How I Work
           </span>
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
-            This site is wired like this.
+            The Paper Trail
           </h2>
           <p className="max-w-2xl text-sm text-muted sm:text-base">
-            Click any node. Every layer here was designed on paper before a
-            line of code — and it&apos;s all versioned in the docs.
-          </p>
-        </div>
-        <SystemMap />
-      </section>
-
-      {/* Build log section */}
-      <section className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6">
-        <div className="mb-8 flex flex-col gap-2">
-          <span className="font-mono text-xs uppercase tracking-wider text-accent">
-            § 02 — The build log
-          </span>
-          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
-            Watching me work.
-          </h2>
-          <p className="max-w-2xl text-sm text-muted sm:text-base">
-            Every commit is public. This is not a portfolio — it&apos;s a
-            paper trail you can read in real time.
+            I document every project before I code. Here&apos;s me building this
+            site live, day by day. No screenshots — real commits.
           </p>
         </div>
         <CommitFeed />
@@ -49,24 +31,19 @@ export default function HomePage() {
       <section className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6">
         <div className="rounded-2xl border border-border bg-surface p-8 text-center sm:p-12">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
-            The proof is in the <span className="text-accent">paper trail</span>.
+            Got something manual that should be{" "}
+            <span className="text-accent">software</span>?
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm text-muted sm:text-base">
-            Three live systems built and documented with AI in seven days. Not
-            screenshots — running software with an open build log.
+            Tell me the Excel, the WhatsApp forwards, the repeated task. I&apos;ll
+            tell you if I can automate it.
           </p>
-          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="mt-6">
             <Link
-              href="/systems"
+              href="/contact"
               className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-bg transition-colors hover:bg-accent-dim"
             >
-              Open the demos →
-            </Link>
-            <Link
-              href="/blueprints"
-              className="font-mono text-sm text-muted transition-colors hover:text-accent"
-            >
-              /blueprints — how I work
+              Let&apos;s talk →
             </Link>
           </div>
         </div>

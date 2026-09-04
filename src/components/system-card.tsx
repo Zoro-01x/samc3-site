@@ -25,7 +25,7 @@ export const systemList: System[] = [
       "Textile shops in Surat run on WhatsApp and memory. No catalog, no inventory, no web presence.",
     io: ["upload: catalog.xlsx", "out: site + WhatsApp bot"],
     stack: ["Next.js", "Supabase", "WhatsApp API", "Claude"],
-    href: "/systems/textile",
+    href: "/contact",
     proof: "A real shop's catalog becomes a live storefront. This is Surat SME pain turned into a product.",
   },
   {
@@ -39,7 +39,7 @@ export const systemList: System[] = [
       "Every codebase is a black box. Onboarding means reading 10k lines to find what changed and why.",
     io: ["input: github repo", "out: 3 documented markdown files"],
     stack: ["GitHub API", "Next.js", "Vercel AI SDK", "Claude"],
-    href: "/systems/handover",
+    href: "/contact",
     proof: "Paste a repo URL. Watch it turn into a paper trail in seconds. This is the one devs share.",
   },
   {
@@ -53,7 +53,7 @@ export const systemList: System[] = [
       "Founders start with a sentence and a hope. No architecture, no constraints, no sequenced plan.",
     io: ["input: idea", "out: architecture + tasks"],
     stack: ["Next.js", "Supabase", "Vercel AI SDK", "Claude"],
-    href: "/systems/founders",
+    href: "/contact",
     proof: "A founder's idea becomes a buildable architecture in one prompt. Management + architect in a box.",
   },
 ];
@@ -108,7 +108,7 @@ export function SystemCard({ system }: { system: System }) {
       </div>
 
       <p className="mt-4 font-mono text-xs text-accent opacity-0 transition-opacity group-hover:opacity-100">
-        inspect → {system.href}
+        talk to sam →
       </p>
     </Link>
   );
