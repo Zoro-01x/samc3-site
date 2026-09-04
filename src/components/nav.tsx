@@ -15,10 +15,10 @@ export function Nav() {
     <header className="sticky top-0 z-50 w-full border-b border-border bg-bg/80 backdrop-blur-md">
       <div className="mx-auto flex h-14 w-full max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link href="/" className="group flex items-center gap-2">
-          <span className="flex h-6 w-6 items-center justify-center rounded-md border border-accent/40 bg-accent/10 font-mono text-xs font-bold text-accent">
+          <span className="flex h-6 w-6 items-center justify-center rounded-md border border-accent/40 bg-accent/10 text-xs font-bold text-accent">
             S
           </span>
-          <span className="font-mono text-sm font-semibold tracking-tight">
+          <span className="text-sm font-semibold tracking-tight">
             sam
             <span className="text-accent">/</span>
             <span className="text-muted">systems</span>

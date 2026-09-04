@@ -18,7 +18,7 @@ export default function ArchitecturePage() {
     <main className="mx-auto w-full max-w-4xl flex-1 px-4 py-14 sm:px-6">
       <div className="mb-8 flex flex-wrap items-center justify-between gap-3 border-b border-border pb-6">
         <div>
-          <span className="font-mono text-xs uppercase tracking-wider text-accent">
+          <span className="text-xs uppercase tracking-wider text-accent">
             /architecture
           </span>
           <h1 className="mt-2 text-3xl font-bold tracking-tight">
@@ -33,13 +33,13 @@ export default function ArchitecturePage() {
           href="https://github.com/Zoro-01x/samc3-site/blob/master/ARCHITECTURE.md"
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-lg border border-border bg-surface px-3 py-1.5 font-mono text-xs text-muted transition-colors hover:border-accent/50 hover:text-accent"
+          className="rounded-lg border border-border bg-surface px-3 py-1.5 text-xs text-muted transition-colors hover:border-accent/50 hover:text-accent"
         >
           raw on github ↗
         </a>
       </div>
 
-      <article className="prose prose-invert prose-emerald max-w-none">
+      <article className="prose prose-emerald max-w-none">
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           components={{
@@ -54,13 +54,13 @@ export default function ArchitecturePage() {
             ),
             code: (props) => (
               <code
-                className="rounded border border-border bg-surface-2 px-1.5 py-0.5 font-mono text-[0.9em] text-accent"
+                className="rounded border border-border bg-surface-2 px-1.5 py-0.5 text-[0.9em] text-accent"
                 {...props}
               />
             ),
             pre: (props) => (
               <pre
-                className="overflow-x-auto rounded-xl border border-border bg-surface p-4 font-mono text-sm leading-relaxed"
+                className="overflow-x-auto rounded-xl border border-border bg-surface p-4 text-sm leading-relaxed"
                 {...props}
               />
             ),
@@ -92,7 +92,7 @@ export default function ArchitecturePage() {
             ),
             th: (props) => (
               <th
-                className="border border-border bg-surface-2 px-3 py-2 text-left font-mono text-xs text-accent"
+                className="border border-border bg-surface-2 px-3 py-2 text-left text-xs text-accent"
                 {...props}
               />
             ),
@@ -105,7 +105,7 @@ export default function ArchitecturePage() {
                 checked={checked}
                 disabled
                 readOnly
-                className="mr-2 accent-emerald-500"
+                className="mr-2 accent-accent"
                 {...props}
               />
             ),

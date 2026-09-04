@@ -33,7 +33,7 @@ export function ServiceCards() {
       <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
         <div className="grid items-start gap-8 lg:grid-cols-[1fr_1.4fr]">
           <div>
-            <span className="font-mono text-xs uppercase tracking-wider text-accent">
+            <span className="text-xs uppercase tracking-wider text-accent">
               for business owners
             </span>
             <h2 className="mt-2 text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
@@ -88,9 +88,9 @@ function ServiceCard({
 }) {
   return (
     <Link href={href} className="block">
-      <div className="service-card group flex h-full flex-col rounded-xl border border-border bg-surface p-4 transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-accent/50 hover:shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+      <div className="service-card group flex h-full flex-col rounded-xl border border-border bg-surface p-4 transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-accent/50 hover:shadow-[0_0_20px_rgba(74,124,95,0.18)]">
         <div className="mb-3 flex items-center justify-between">
-          <span className="font-mono text-xs font-bold text-accent/60 group-hover:text-accent">
+          <span className="text-xs font-bold text-accent/60 group-hover:text-accent">
             {n}
           </span>
         </div>
@@ -102,7 +102,7 @@ function ServiceCard({
 
         <div className="mt-4 flex-1" />
 
-        <div className="mt-4 flex items-center justify-center rounded-lg px-3 py-2 text-center text-sm font-semibold bg-accent text-bg group-hover:bg-accent-dim">
+        <div className="mt-4 flex items-center justify-center rounded-lg px-3 py-2 text-center text-sm font-semibold bg-accent text-white group-hover:bg-accent-dim">
           {cta}
         </div>
       </div>

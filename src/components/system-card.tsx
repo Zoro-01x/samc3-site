@@ -63,20 +63,20 @@ export function SystemCard({ system }: { system: System }) {
     system.status === "Live Demo"
       ? "bg-accent/10 text-accent border-accent/40"
       : system.status === "Building"
-        ? "bg-amber-500/10 text-amber-400 border-amber-500/30"
+        ? "bg-amber-100 text-amber-800 border-amber-300"
         : "bg-muted/10 text-muted border-border";
 
   return (
     <Link
       href={system.href}
-      className="group flex flex-col rounded-xl border border-border bg-surface p-6 transition-all hover:border-accent/40 hover:shadow-[0_0_30px_rgba(16,185,129,0.06)]"
+      className="group flex flex-col rounded-xl border border-border bg-surface p-6 transition-all hover:border-accent/40 hover:shadow-[0_0_30px_rgba(74,124,95,0.10)]"
     >
       <div className="mb-4 flex items-center justify-between">
-        <span className="font-mono text-3xl font-bold text-accent/30 transition-colors group-hover:text-accent/60">
+        <span className="text-3xl font-bold text-accent/30 transition-colors group-hover:text-accent/60">
           {system.tag}
         </span>
         <span
-          className={`rounded-full border px-2.5 py-0.5 font-mono text-[11px] ${statusColor}`}
+          className={`rounded-full border px-2.5 py-0.5 text-[11px] ${statusColor}`}
         >
           {system.status}
         </span>
@@ -87,7 +87,7 @@ export function SystemCard({ system }: { system: System }) {
         {system.blurb}
       </p>
 
-      <div className="mt-4 rounded-lg border border-border bg-bg/60 p-3 font-mono text-[11px] leading-relaxed">
+      <div className="mt-4 rounded-lg border border-border bg-bg/60 p-3 text-[11px] leading-relaxed">
         <p className="text-muted-2">
           <span className="text-accent">in:</span> {system.io[0]}
         </p>
@@ -100,14 +100,14 @@ export function SystemCard({ system }: { system: System }) {
         {system.stack.map((s) => (
           <span
             key={s}
-            className="rounded border border-border bg-surface-2 px-2 py-0.5 font-mono text-[10px] text-muted"
+            className="rounded border border-border bg-surface-2 px-2 py-0.5 text-[10px] text-muted"
           >
             {s}
           </span>
         ))}
       </div>
 
-      <p className="mt-4 font-mono text-xs text-accent opacity-0 transition-opacity group-hover:opacity-100">
+      <p className="mt-4 text-xs text-accent opacity-0 transition-opacity group-hover:opacity-100">
         talk to sam →
       </p>
     </Link>

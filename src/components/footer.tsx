@@ -4,18 +4,20 @@ export function Footer() {
   return (
     <footer className="border-t border-border">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-4 py-8 sm:px-6 md:flex-row md:items-center md:justify-between">
-        <div className="font-mono text-xs text-muted-2">
-          <span className="text-accent">$</span> sam@systems: ~/site
-          <span className="animate-pulse">▌</span>
+        <div className="text-xs text-muted-2">
+          <span className="font-semibold text-foreground">
+            Sam
+          </span>{" "}
+          — AI Systems Architect, Surat
         </div>
-        <div className="flex items-center gap-4 font-mono text-xs text-muted-2">
+        <div className="flex items-center gap-4 text-xs text-muted-2">
           <a
             href="https://github.com/Zoro-01x"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors hover:text-foreground"
           >
-            github: Zoro-01x
+            GitHub
           </a>
           <Link
             href="/architecture"
@@ -27,7 +29,7 @@ export function Footer() {
             href="/contact"
             className="transition-colors hover:text-foreground"
           >
-            contact
+            Contact
           </Link>
         </div>
       </div>

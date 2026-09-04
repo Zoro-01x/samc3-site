@@ -106,8 +106,8 @@ export function SystemMap() {
       {/* Tree */}
       <div className="rounded-xl border border-border bg-surface p-5">
         <div className="mb-4 flex items-center justify-between border-b border-border pb-3">
-          <span className="font-mono text-xs text-muted-2">~/systems/map</span>
-          <span className="font-mono text-xs text-accent">● interactive</span>
+          <span className="text-xs text-muted-2">~/systems/map</span>
+          <span className="text-xs text-accent">● interactive</span>
         </div>
         <TreeNodes nodes={tree.children ?? []} onSelect={setSelected} depth={0} />
       </div>
@@ -115,22 +115,22 @@ export function SystemMap() {
       {/* Inspector */}
       <div className="flex flex-col rounded-xl border border-border bg-surface p-5">
         <div className="mb-4 flex items-center justify-between border-b border-border pb-3">
-          <span className="font-mono text-xs text-muted-2">inspector</span>
-          <span className="font-mono text-xs text-accent">● live</span>
+          <span className="text-xs text-muted-2">inspector</span>
+          <span className="text-xs text-accent">● live</span>
         </div>
         <div className="flex-1">
           <div className="mb-3 flex items-center gap-2">
-            <span className="rounded border border-accent/40 bg-accent/10 px-2 py-0.5 font-mono text-xs text-accent">
+            <span className="rounded border border-accent/40 bg-accent/10 px-2 py-0.5 text-xs text-accent">
               {selected.type}
             </span>
-            <span className="break-all font-mono text-sm font-semibold">
+            <span className="break-all text-sm font-semibold">
               {selected.name}
             </span>
           </div>
           <p className="text-sm leading-relaxed text-muted">{selected.desc}</p>
         </div>
 
-        <div className="mt-6 border-t border-border pt-4 font-mono text-xs text-muted-2">
+        <div className="mt-6 border-t border-border pt-4 text-xs text-muted-2">
           <p className="mb-1">
             <span className="text-accent">$</span> cat ARCHITECTURE.md
           </p>
@@ -163,11 +163,11 @@ function TreeNodes({
             className="group flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-left transition-colors hover:bg-surface-2"
           >
             <TypeIcon type={node.type} />
-            <span className="font-mono text-sm text-foreground/90 transition-colors group-hover:text-accent">
+            <span className="text-sm text-foreground/90 transition-colors group-hover:text-accent">
               {node.name}
             </span>
             {node.children && (
-              <span className="ml-auto font-mono text-xs text-muted-2 opacity-0 transition-opacity group-hover:opacity-100">
+              <span className="ml-auto text-xs text-muted-2 opacity-0 transition-opacity group-hover:opacity-100">
                 {node.children.length} ↓
               </span>
             )}
@@ -186,7 +186,7 @@ function TypeIcon({ type }: { type: string }) {
     nextjs: "text-accent",
     page: "text-accent",
     route: "text-cyan-400",
-    ui: "text-emerald-300",
+    ui: "text-accent",
     markdown: "text-slate-400",
     md: "text-slate-400",
     deploy: "text-amber-400",
@@ -194,7 +194,7 @@ function TypeIcon({ type }: { type: string }) {
   };
   const color = colors[type] ?? "text-muted-2";
   return (
-    <span className={`font-mono text-xs ${color}`}>
+    <span className={`text-xs ${color}`}>
       {type === "md" || type === "markdown" ? "M↓" : type === "root" ? "Σ" : "⟨/⟩"}
     </span>
   );

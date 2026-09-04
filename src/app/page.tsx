@@ -13,8 +13,8 @@ export default function HomePage() {
       {/* How I Work — paper trail */}
       <section className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6">
         <div className="mb-8 flex flex-col gap-2">
-          <span className="font-mono text-xs uppercase tracking-wider text-accent">
-            § 01 — How I Work
+          <span className="text-xs uppercase tracking-wider text-accent">
+            How I Work
           </span>
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
             The Paper Trail
@@ -41,7 +41,7 @@ export default function HomePage() {
           <div className="mt-6">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-bg transition-colors hover:bg-accent-dim"
+              className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-accent-dim"
             >
               Let&apos;s talk →
             </Link>

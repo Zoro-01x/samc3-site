@@ -40,7 +40,7 @@ export default function LabPage() {
   return (
     <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-14 sm:px-6">
       <div className="mb-12 max-w-2xl">
-        <span className="font-mono text-xs uppercase tracking-wider text-accent">
+        <span className="text-xs uppercase tracking-wider text-accent">
           /lab
         </span>
         <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -61,21 +61,21 @@ export default function LabPage() {
           >
             <div className="mb-3 flex items-center justify-between gap-4">
               <h3 className="text-base font-bold tracking-tight">{b.name}</h3>
-              <span className="shrink-0 rounded border border-accent/40 bg-accent/10 px-2 py-0.5 font-mono text-[11px] text-accent">
+              <span className="shrink-0 rounded border border-accent/40 bg-accent/10 px-2 py-0.5 text-[11px] text-accent">
                 {b.time}
               </span>
             </div>
             <p className="flex-1 text-sm leading-relaxed text-muted">{b.desc}</p>
             <div className="mt-4 flex items-center justify-between border-t border-border pt-3">
-              <span className="font-mono text-xs text-muted-2">{b.stack}</span>
-              <span className="font-mono text-xs text-accent">{b.cost}</span>
+              <span className="text-xs text-muted-2">{b.stack}</span>
+              <span className="text-xs text-accent">{b.cost}</span>
             </div>
           </div>
         ))}
       </div>
 
       <div className="mt-12 rounded-xl border border-dashed border-border bg-surface/50 p-6 text-center">
-        <p className="font-mono text-sm text-muted">
+        <p className="text-sm text-muted">
           <span className="text-accent">more</span> →
           {" "}
           <span className="text-muted-2">Surat Textile OS · AI Handover Kit · Founder's OS — shipping in the /systems section.</span>

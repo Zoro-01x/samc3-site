@@ -52,7 +52,7 @@ export default function BlueprintsPage() {
   return (
     <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-14 sm:px-6">
       <div className="mb-12 max-w-2xl">
-        <span className="font-mono text-xs uppercase tracking-wider text-accent">
+        <span className="text-xs uppercase tracking-wider text-accent">
           /blueprints
         </span>
         <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -76,7 +76,7 @@ export default function BlueprintsPage() {
             <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
               {p.body}
             </p>
-            <div className="mt-5 rounded-lg border border-border bg-bg/80 p-3 font-mono text-xs text-accent">
+            <div className="mt-5 rounded-lg border border-border bg-bg/80 p-3 text-xs text-accent">
               {p.code}
             </div>
           </div>
@@ -89,7 +89,7 @@ export default function BlueprintsPage() {
           <h2 className="text-xl font-bold tracking-tight">
             The diary — proof it&apos;s real
           </h2>
-          <span className="font-mono text-xs text-accent">● live</span>
+          <span className="text-xs text-accent">live</span>
         </div>
         <div className="space-y-4">
           {diary.map((d) => (
@@ -97,13 +97,13 @@ export default function BlueprintsPage() {
               key={d.date}
               className="flex flex-col gap-2 rounded-xl border border-border bg-surface p-5 sm:flex-row sm:items-start sm:gap-4"
             >
-              <span className="shrink-0 font-mono text-xs text-muted-2 sm:w-40">
+              <span className="shrink-0 text-xs text-muted-2 sm:w-40">
                 {d.date}
               </span>
               <p className="flex-1 text-sm leading-relaxed text-foreground/90">
                 {d.entry}
               </p>
-              <span className="ml-auto shrink-0 rounded border border-border bg-bg px-2 py-0.5 font-mono text-[10px] uppercase text-muted-2">
+              <span className="ml-auto shrink-0 rounded border border-border bg-bg px-2 py-0.5 text-[10px] uppercase text-muted-2">
                 {d.tag}
               </span>
             </div>

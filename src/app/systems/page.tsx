@@ -10,7 +10,7 @@ export default function SystemsPage() {
   return (
     <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-14 sm:px-6">
       <div className="mb-10 max-w-2xl">
-        <span className="font-mono text-xs uppercase tracking-wider text-accent">
+        <span className="text-xs uppercase tracking-wider text-accent">
           /systems
         </span>
         <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">

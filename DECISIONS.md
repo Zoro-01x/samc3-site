@@ -72,6 +72,30 @@ Seed data for the MVP; real GitHub commit stream in Week 2.
 
 **Card C (Founder's OS) treatment:** Showpiece only. Stays as "Coming soon" card with no live action and no signup. It's a private project for an organization; no public data, no email capture, no waitlist. The card exists to prove Sam is working on real things for real orgs, not to capture leads.
 
+## 2026-09-04 — Warm-Light "Natural Atelier" Theme
+
+**Decision: Replace the black + neon-emerald cyberpunk look with an off-white + moss-green warm atelier theme. The build log keeps JetBrains Mono as the single architectural signature.**
+
+**Why:** First impressions read as "hacker terminal," not "trusted business partner." For Sam's primary audience (non-tech Surat textile/diamond/manufacturing SME owners), dark + neon + monospace + blinking cursor all trigger "scary tech guy" rather than "calm expert." The brand needs to feel *natural, warm, trustworthy* — like a well-run textile workshop — not "developer screencast." At the same time, the "paper trail" identity (AFP — Architecture First, Paper Trail Always) must survive, so the build log keeps its monospace as the one signature of technical depth.
+
+**The token map (every other component auto-updates because the codebase is token-driven):**
+- Background: black `#0a0a0a` → off-white paper `#faf9f6`
+- Cards: dark grey `#111111` → warm card `#f2efe9`
+- Text: light grey `#e5e5e5` → warm charcoal `#1f2933`
+- Accent: neon emerald `#10b981` → moss/forest `#4a7c5f` (calm, organic, still growth/trust)
+- Hover: `#0f8a63` → `#3d6650` (deeper moss)
+- Border: dark grey → warm light grey `#e5e0d8`
+- Grid backdrop: white-on-black → moss-tinted `rgba(74,124,95,0.06)` on paper (blueprint, not terminal)
+- `color-scheme: dark` → `light`
+- `prose-invert` on architecture page removed (would have rendered white-on-white)
+- All `text-bg` (black-on-green CTAs) flipped to `text-white` (white-on-moss)
+- 9 files stripped of `font-mono` except `commit-feed.tsx` (build log) which keeps mono as the architect's signature
+- Hero copy updated from "I build AI systems that don't need me to explain them" to **"I build AI systems that run your business"** with sub "Surat, Gujarat — for businesses that make real things" — localizes, removes the "abstract dev" tone
+- Footer: removed `~/site▌` terminal prompt; now reads "Sam — AI Systems Architect, Surat" in clean sans
+- `§ 01` and `● live` glyphs removed from non-build-log sections
+
+**No push yet** — per the local-first rule, this is held on the dev server for Sam's visual approval. Once he signs off, the commit gets made and Vercel deploys the verified product.
+
 ## 2026-09-03 — Homepage rebuild for non-tech clients
 
 **Decision: Rebuild the homepage to lead with services, not proof. Drop the system map from the homepage, simplify nav to Home + Contact, add a /contact page, point all CTAs to /contact.**
