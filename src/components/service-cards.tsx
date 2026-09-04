@@ -1,6 +1,33 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useRef } from "react";
+import { animate, stagger } from "animejs";
+import { prefersReducedMotion, isSmallScreen } from "@/lib/motion";
 
 export function ServiceCards() {
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  // Stagger fade-in of the 3 cards on load (1% motion, calm).
+  useEffect(() => {
+    const grid = gridRef.current;
+    if (!grid) return;
+    if (prefersReducedMotion()) return;
+
+    const cards = grid.querySelectorAll<HTMLElement>(".service-card");
+    if (!cards.length) return;
+
+    // Mobile: just fade-in, no y-shift. Desktop: gentle rise + stagger.
+    const small = isSmallScreen();
+    animate(cards, {
+      opacity: [0, 1],
+      translateY: small ? [0, 0] : [20, 0],
+      delay: stagger(100),
+      duration: small ? 450 : 600,
+      easing: "easeOutQuad",
+    });
+  }, []);
+
   return (
     <section className="border-b border-border bg-surface/50">
       <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
@@ -17,28 +44,25 @@ export function ServiceCards() {
             </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-3">
+          <div ref={gridRef} className="grid gap-4 sm:grid-cols-3">
             <ServiceCard
               n="01"
               title="AI Websites That Do The Work"
-              description=
-                "Not just a good-looking site. A website that answers your leads, books your calls, and sells while you sleep."
+              description="Not just a good-looking site. A website that answers your leads, books your calls, and sells while you sleep."
               cta="I want this →"
               href="/contact"
             />
             <ServiceCard
               n="02"
               title="Business Software That Replaces Manual Work"
-              description=
-                "You tell me the messy work you do daily on Excel, WhatsApp, sheets. I turn it into one-click software for your team."
+              description="You tell me the messy work you do daily on Excel, WhatsApp, sheets. I turn it into one-click software for your team."
               cta="I want this →"
               href="/contact"
             />
             <ServiceCard
               n="03"
               title="AI That Uses Your Own Data"
-              description=
-                "You have data, chats, notes, but no system. I build AI tools that turn it into content, reports, or auto-replies."
+              description="You have data, chats, notes, but no system. I build AI tools that turn it into content, reports, or auto-replies."
               cta="I want this →"
               href="/contact"
             />
@@ -64,9 +88,7 @@ function ServiceCard({
 }) {
   return (
     <Link href={href} className="block">
-      <div
-        className="flex h-full flex-col rounded-xl border bg-surface p-4 transition-all hover:border-accent/50 hover:shadow-[0_0_30px_rgba(16,185,129,0.08)]"
-      >
+      <div className="service-card group flex h-full flex-col rounded-xl border border-border bg-surface p-4 transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-accent/50 hover:shadow-[0_0_20px_rgba(16,185,129,0.2)]">
         <div className="mb-3 flex items-center justify-between">
           <span className="font-mono text-xs font-bold text-accent/60 group-hover:text-accent">
             {n}
@@ -80,9 +102,7 @@ function ServiceCard({
 
         <div className="mt-4 flex-1" />
 
-        <div
-          className="mt-4 flex items-center justify-center rounded-lg px-3 py-2 text-center text-sm font-semibold transition-colors bg-accent text-bg group-hover:bg-accent-dim"
-        >
+        <div className="mt-4 flex items-center justify-center rounded-lg px-3 py-2 text-center text-sm font-semibold bg-accent text-bg group-hover:bg-accent-dim">
           {cta}
         </div>
       </div>

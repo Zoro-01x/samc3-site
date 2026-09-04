@@ -1,6 +1,29 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useRef } from "react";
+import { animate } from "animejs";
+import { prefersReducedMotion } from "@/lib/motion";
 
 export function Hero() {
+  const dotRef = useRef<HTMLSpanElement>(null);
+
+  // Gentle pulse on the AFP emerald dot, loop every 3s, 0.6 → 1.0 opacity.
+  useEffect(() => {
+    const dot = dotRef.current;
+    if (!dot || prefersReducedMotion()) return;
+
+    const loop = animate(dot, {
+      opacity: [0.6, 1.0],
+      duration: 1500,
+      easing: "easeInOutQuad",
+      loop: true,
+    });
+    return () => {
+      loop.pause();
+    };
+  }, []);
+
   return (
     <section className="relative flex flex-col items-center justify-center overflow-hidden px-4 pb-16 pt-20 sm:px-6 sm:pt-28">
       {/* backdrop */}
@@ -14,7 +37,10 @@ export function Hero() {
       />
 
       <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 font-mono text-xs text-muted">
-        <span className="flex h-1.5 w-1.5 rounded-full bg-accent" />
+        <span
+          ref={dotRef}
+          className="flex h-1.5 w-1.5 rounded-full bg-accent"
+        />
         AFP — Architecture First, Paper Trail Always
       </span>
 
