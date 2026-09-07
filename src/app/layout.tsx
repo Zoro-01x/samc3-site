@@ -4,16 +4,18 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "Sam — AI Systems Architect",
+  title: "AI Systems for Surat Textile & Diamond Businesses | Sam",
   description:
-    "I build AI systems that don't need me to explain them. A site that documents how it was built, while I use it.",
+    "I build AI software for Surat businesses — textile shops, diamond traders, manufacturers. WhatsApp automation, inventory systems, AI tools that run your business while you sleep. Talk to me on WhatsApp or Instagram.",
   keywords: [
-    "AI Systems Architect",
-    "Sam",
-    "Surat Textile OS",
-    "AI Handover Kit",
-    "Founder's OS",
-    "systems thinking",
+    "AI software Surat",
+    "textile business software",
+    "diamond trading software Surat",
+    "WhatsApp automation",
+    "AI systems Surat",
+    "business software Gujarat",
+    "inventory management Surat",
+    "Sam AI architect",
   ],
 };
 

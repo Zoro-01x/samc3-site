@@ -2,6 +2,30 @@
 
 > **Every decision, recorded. When it was made, why, and what it cost.** No silent rework. If a future diff contradicts a decision below, either the diff is wrong or this file is — and both get updated at once.
 
+## 2026-09-07 — Add site depth & discoverability (revisit 2026-09-03 nav decision)
+
+**Decision: Expand nav from 2 → 5 links (Home, Work, Systems, Lab, Contact). Restructure footer into 3 columns. Add a new /work page with 3 anchored sections. Add depth to /contact (4-step flow + FAQ). Promote 2 /blueprints pillars and 3 /lab builds into homepage preview sections.**
+
+**Why (revisiting 2026-09-03's "simplify nav to Home + Contact"):** The 2026-09-03 decision was correct for the first 5 seconds — non-tech clients see the hero, see the 3 service cards, see "Let's talk." But the site felt thin after the hero scrolled past. The other 5 routes (work, systems, blueprints, lab, architecture) were hidden in the nav but visible via direct URL — making the site feel hollow to anyone who lingered. A visitor who scrolls past the fold had nowhere to go except /contact, which felt like a dead-end funnel.
+
+**The new homepage order (now ~2x scrollable):**
+1. Hero (kept)
+2. Service cards — same 3, but each CTA now points to a distinct anchor on /work (`/work#websites`, `/work#software`, `/work#data-tools`) instead of all → /contact
+3. Build log (kept)
+4. **Method preview (NEW)** — 2 of 4 pillars from /blueprints, with "Read all 4 rules →" link
+5. **Lab preview (NEW)** — 3 micro-build cards, with "See all micro-builds →" link
+6. CTA → /contact (kept, unchanged)
+
+**The new /work page:** 3 anchored sections with one mini-essay + 3 example outcomes + a section-specific CTA each. Each example is plain-English ("Inquiry form → auto-reply on WhatsApp", "Excel stock sheet → web app") not jargon. The /work page gives business owners something to read before they DM, reducing low-quality leads.
+
+**Nav: 5 links instead of 2.** Order: Home, Work, Systems, Lab, Contact. Story flow: "what's on offer" → "what I build" → "proof I've built" → "how fast I move" → "talk to me." Active state highlighting on non-root paths.
+
+**Footer: 3 columns instead of a single row.** Discover (Home, Work, Systems, Lab) / Build (Contact, GitHub, ARCHITECTURE, Blueprints) / About (brand line + working hours). The bottom bar keeps the copyright + AFP tagline.
+
+**/contact: depth added.** 4-step "What happens next" section (reply within 6 hrs → 15-min call → one-page scope within 48 hrs) makes the offer concrete. Working hours (10am–9pm IST Mon–Sat) sets expectations. FAQ with 4 common questions (payment, plain websites, geography, small businesses) answers objections before the DM.
+
+**Local-only rule still in effect.** All changes held on dev server for visual verification before push. No deploy to Vercel.
+
 ## 2026-09-03 — Site Concept
 
 **Decision: The site is not a portfolio. It is the demo of my system thinking.**
@@ -71,6 +95,26 @@ Seed data for the MVP; real GitHub commit stream in Week 2.
 - Non-tech visitor stops at Layer 1. Tech visitor scrolls deeper.
 
 **Card C (Founder's OS) treatment:** Showpiece only. Stays as "Coming soon" card with no live action and no signup. It's a private project for an organization; no public data, no email capture, no waitlist. The card exists to prove Sam is working on real things for real orgs, not to capture leads.
+
+## 2026-09-04 — Live GitHub Commit Feed
+
+**Decision: Wire the homepage build log to the real GitHub commit history of `Zoro-01x/samc3-site`, replacing the seeded fake commits.**
+
+**Why:** The site's thesis is "the site that documents itself — watch me work in public." Until now, the build log on the homepage showed *seeded* fake commits with hashes like `a1b2c3d` and a footer line reading "this seed is the proof." That's literally the opposite of proof. A real commit log is what makes the paper-trail claim *true* and what gives a skeptical builder (or a tech-savvy buyer) something verifiable to look at.
+
+**How it works:**
+- `src/lib/github.ts` is a server-only fetch helper that calls `https://api.github.com/repos/Zoro-01x/samc3-site/commits?per_page=8` (public API, no auth needed for public repos). Shapes the response into `{ sha, message, date, author, tag }`.
+- `src/app/page.tsx` is now `async`, calls `fetchCommits()` at the top, passes the array to `<CommitFeed/>`.
+- `src/components/commit-feed.tsx` drops the hardcoded seed, accepts the `commits` prop, renders the empty-state if GitHub is unreachable. Keeps the anime.js IntersectionObserver reveal.
+- **ISR with `revalidate: 60`**: the page is statically generated, regenerates at most every 60s. New commits appear within a minute without a redeploy.
+- Classifies each commit by conventional-commit prefix (feat/fix/docs/chore/style) — those are the only tags that show in the build log pill.
+- 8 most-recent commits shown: enough to feel "live," not so many it becomes a wall.
+
+**No env vars, no API key** — the GitHub public API has a 60-req/hr unauthenticated limit, and we fetch at most every 60s of regeneration, so we are far under it. If the site ever gets hammered, the upgrade is `GITHUB_TOKEN` env var (free, public-repo read). Deferred — YAGNI.
+
+**The `origin/main` branch badge is now `github.com/Zoro-01x` — more accurate** (the default branch is `master`, not `main`, and the build log doesn't need to claim a branch).
+
+**No push yet** — per the local-first rule, this is held on the dev server for Sam's visual approval. Once he signs off, the commit gets made and Vercel deploys the verified product.
 
 ## 2026-09-04 — Warm-Light "Natural Atelier" Theme
 

@@ -1,9 +1,13 @@
 import { Hero } from "@/components/hero";
 import { ServiceCards } from "@/components/service-cards";
 import { CommitFeed } from "@/components/commit-feed";
+import { MethodSection } from "@/components/method-section";
+import { LabStrip } from "@/components/lab-strip";
+import { fetchCommits } from "@/lib/github";
 import Link from "next/link";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const commits = await fetchCommits();
   return (
     <>
       <Hero />
@@ -24,8 +28,14 @@ export default function HomePage() {
             site live, day by day. No screenshots — real commits.
           </p>
         </div>
-        <CommitFeed />
+        <CommitFeed commits={commits} />
       </section>
+
+      {/* Method preview */}
+      <MethodSection />
+
+      {/* Lab preview */}
+      <LabStrip />
 
       {/* CTA */}
       <section className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6">

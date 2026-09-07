@@ -50,21 +50,21 @@ export function ServiceCards() {
               title="AI Websites That Do The Work"
               description="Not just a good-looking site. A website that answers your leads, books your calls, and sells while you sleep."
               cta="I want this →"
-              href="/contact"
+              href="/work#websites"
             />
             <ServiceCard
               n="02"
               title="Business Software That Replaces Manual Work"
               description="You tell me the messy work you do daily on Excel, WhatsApp, sheets. I turn it into one-click software for your team."
               cta="I want this →"
-              href="/contact"
+              href="/work#software"
             />
             <ServiceCard
               n="03"
               title="AI That Uses Your Own Data"
               description="You have data, chats, notes, but no system. I build AI tools that turn it into content, reports, or auto-replies."
               cta="I want this →"
-              href="/contact"
+              href="/work#data-tools"
             />
           </div>
         </div>

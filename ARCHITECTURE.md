@@ -8,17 +8,20 @@
 ```
 samc3-site/
 ├── src/
-│   ├── app/                  # Next.js App Router
-│   │   ├── page.tsx          # Homepage — hero + system map + build log
-│   │   ├── layout.tsx        # Shell: nav + footer
-│   │   ├── systems/page.tsx  # /systems — 3 live demos
-│   │   ├── blueprints/       # /blueprints — method
-│   │   ├── lab/              # /lab — 5-hr builds
-│   │   └── architecture/     # /architecture — this doc, rendered live
-│   ├── components/           # Nav, Footer, Hero, SystemMap, CommitFeed, SystemCard
-│   └── lib/                  # Shared utilities
-├── public/                   # Static assets
-├── ARCHITECTURE.md           # ← you are here
+│   ├── app/                       # Next.js App Router
+│   │   ├── page.tsx               # Homepage — hero + service cards + build log + method + lab previews + CTA
+│   │   ├── layout.tsx             # Shell: 5-link nav + 3-column footer
+│   │   ├── work/page.tsx          # /work — what I build (3 anchor sections: #websites, #software, #data-tools)
+│   │   ├── systems/page.tsx       # /systems — 4 real public repos (proof)
+│   │   ├── projects/page.tsx      # /projects — 307 redirect to /systems
+│   │   ├── blueprints/            # /blueprints — method pillars + diary
+│   │   ├── lab/                   # /lab — micro-build cards
+│   │   ├── contact/               # /contact — Instagram + WhatsApp + steps + FAQ
+│   │   └── architecture/          # /architecture — this doc, rendered live
+│   ├── components/                # Nav, Footer, Hero, ServiceCards, CommitFeed, SystemCard, MethodSection, LabStrip
+│   └── lib/                       # github.ts (commit fetcher), systems.ts (repo data), motion.ts
+├── public/                        # Static assets
+├── ARCHITECTURE.md                # ← you are here
 ├── DECISIONS.md
 └── FLOW.md
 ```
@@ -27,11 +30,14 @@ samc3-site/
 
 ```
 [Visitor] ⇄ [Next.js 15 App (Vercel edge)]
-              ├── Homepage  ── System Map ── Commit Feed
-              ├── /systems  ── 3 demo cards
-              ├── /blueprints ── method pillars
+              ├── Homepage  ── Service Cards → /work#* ── Commit Feed ── Method preview → /blueprints ── Lab preview → /lab ── CTA → /contact
+              ├── /work      ── 3 anchored service sections (#websites, #software, #data-tools)
+              ├── /systems   ── 4 real public repos (samc3-site, opencode-supervisor, software-development-governor, Orvyn-v2)
+              ├── /projects  ── 307 redirect → /systems
+              ├── /blueprints ── method pillars + diary
               ├── /lab       ── micro-build log
-              └── /architecture ── this doc rendered
+              ├── /contact   ── Instagram + WhatsApp + 4-step flow + FAQ
+              ├── /architecture ── this doc rendered
               └── [GitHub: Zoro-01x] ◄── public paper trail
 ```
 
@@ -51,7 +57,7 @@ The differentiator. Every file in `docs/` is versioned in the public GitHub repo
 
 ## 5. External Integrations
 
-- **GitHub API** (Week 2) — pull `owner/gh` commits for the realtime build log.
+- **GitHub API** — `GET /repos/Zoro-01x/samc3-site/commits?per_page=8`. Public, no auth, no key. Server-side fetch from `src/lib/github.ts` with ISR `revalidate: 60`. Powers the live build log on the homepage.
 - **Vercel AI SDK + Claude** (Week 2-3) — generate DECISIONS.md / FLOW.md / BUG.md for System B & C.
 
 ## 6. Deployment & Infrastructure

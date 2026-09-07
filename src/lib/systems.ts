@@ -1,0 +1,57 @@
+import { System } from "@/components/system-card";
+
+export const systemsList: System[] = [
+  {
+    id: "samc3-site",
+    tag: "META-PROOF",
+    name: "samc3-site",
+    blurb: "The site you're on — live, documented, versioned.",
+    problem: "Need to show real work, not just claims.",
+    io: ["Local dev", "Vercel preview"],
+    stack: ["Next.js", "React", "Tailwind", "Vercel"],
+    githubUrl: "https://github.com/Zoro-01x/samc3-site",
+    liveUrl: "https://samc3-site.vercel.app",
+    status: "Live Demo",
+    proof: "Tested on local + hosted before push",
+  },
+  {
+    id: "opencode-supervisor",
+    tag: "SUPERVISOR SYSTEM",
+    name: "opencode-supervisor",
+    blurb:
+      "AI that doesn't go off the rails — every action goes through gate → contract → verify → review.",
+    problem: "AI agents can make mistakes; need a gatekeeper.",
+    io: ["Input: user prompt", "Output: verified code"],
+    stack: ["TypeScript", "Next.js", "OpenCode"],
+    githubUrl: "https://github.com/Zoro-01x/opencode-supervisor",
+    status: "Live Demo",
+    proof: "Production TypeScript | Architecture diagram | Input gate pattern",
+  },
+  {
+    id: "software-development-governor",
+    tag: "ENGINEERING MATURITY",
+    name: "software-development-governor",
+    displayName: "Governance Kernel",
+    blurb: "Systems that remember, plan, and verify — not just chat.",
+    problem: "AI decisions need audit, memory, and rules.",
+    io: ["Input: spec", "Output: verified system"],
+    stack: ["TypeScript", "Next.js", "OpenAI", "Anthropic", "Gemini"],
+    githubUrl: "https://github.com/Zoro-01x/software-development-governor",
+    status: "Live Demo",
+    proof:
+      "144 module tests | 99.86% pass | 6 frozen laws | OpenAI/Anthropic/Gemini agnostic",
+  },
+  {
+    id: "Orvyn-v2",
+    tag: "ORCHESTRATOR VISION",
+    name: "Orvyn-v2",
+    displayName: "Orvyn v2",
+    blurb: "The orchestrator owns reasoning, agents are just backends.",
+    problem: "Need to choose the right AI model for each task.",
+    io: ["Input: task", "Output: best-fit agent"],
+    stack: ["TypeScript", "Next.js", "Orchestrator logic"],
+    githubUrl: "https://github.com/Zoro-01x/Orvyn-v2",
+    status: "Live Demo",
+    proof: "AI-OS thesis | Real README | Replaceable agent architecture",
+  },
+];
